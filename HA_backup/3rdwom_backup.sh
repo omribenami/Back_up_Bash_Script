@@ -6,7 +6,7 @@ echo "begining backup process........"
 cd ~/homeassistant_backups
 export GZIP=-9
 echo "compressing homeassistant and docker directories...."
-sudo tar  --exclude='*.db' -cvzf  "3rdwom_backup.tar.gz" ~/{bin,homeassistant,docker}  # enter any directory you like to add to your backup file, HA database is excluded to reduce file size (--exclude='*.db')
+tar  --exclude='*.db' -cvzf  "3rdwom_backup.tar.gz" ~/{bin,homeassistant,docker}  # enter any directory you like to add to your backup file, HA database is excluded to reduce file size (--exclude='*.db')
 echo "finished compressing files"
 folder_id="1ZSvypeaTPXf4rZX74ySFbtAAOs1I7HkR"  # this folder id will be used to upload your backup to a specific directory on Google Drive, for more info check gupload git
 echo "uploading files to your google account...."
