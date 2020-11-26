@@ -10,7 +10,7 @@ echo "begining backup process........"
 cd ~/homeassistant_backups 
 export GZIP=-9
 echo "compressing homeassistant and docker directories...."
-sudo tar  --exclude='*.db' -cvzf  "$filename" ~/{bin,homeassistant,docker} # enter any directory you like to add to your backup file, HA database is excluded to reduce file size (--exclude='*.db')
+tar  --exclude='*.db' -cvzf  "$filename" ~/{bin,homeassistant,docker} # enter any directory you like to add to your backup file, HA database is excluded to reduce file size (--exclude='*.db')
 echo "finished compressing files"
 echo "backup process is done" 
 find ~/homeassistant_backups/*.tar.gz -mtime +3 -exec rm {} \; # old files deletion command. currently set to delete any file older then 3 days (you can change it by changing the number 3)
